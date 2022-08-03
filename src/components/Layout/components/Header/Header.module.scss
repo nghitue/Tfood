@@ -1,0 +1,75 @@
+.logo{
+  margin-top: 0;
+  color: var(--primary) !important;
+  a{
+    color: var(--primary);
+    text-decoration: none;
+  }
+}
+
+.wrapper{
+  box-shadow: 0 5px 5px -5px rgba($color: #aaa, $alpha: 0.5);
+  position: fixed;
+  width: 100%;
+  z-index: 99;
+  background: var(--bg-header);
+}
+
+.clear, .loading{
+  margin-right: 5px;
+  path{
+    fill: var(--clborder);
+  }
+}
+
+
+input[type=text]:not(:placeholder-shown) ~ .btn-search{
+  background: var(--clhoverbtn);
+}
+
+
+header{
+  .box{
+    min-width: 500px;
+    min-height: 100px;
+  }
+}
+
+.search-title{
+  padding-left: 20px;
+  margin-bottom: 10px;
+}
+
+.clear-btn{
+  cursor: pointer;
+  &:hover{
+    path{
+      fill: var(--primary);
+    }
+  }
+}
+
+.clear-btn-wrapper{
+  position: relative;
+  right: 10px;
+}
+
+.account-box{
+  background: #000000;
+  padding: 10px;
+  border-radius: 10px;
+  z-index: 999;
+  a{
+    cursor: pointer;
+    display: block;
+    padding: 5px 10px;
+    svg{
+      margin-right: 10px;
+    }
+    &:hover{
+      background: var(---primary);
+    }
+  }
+}
+
+

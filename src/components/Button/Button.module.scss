@@ -1,0 +1,46 @@
+.wrapper{
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 100px;
+  border-radius: 10px;
+  user-select: none;
+  /* 2 class canh nhau */
+  + .wrapper{
+    margin-left: 10px;
+  }
+  &.disable{
+    pointer-events: none;
+    opacity: 0.5;
+  }
+}
+
+.primary{
+  background-color: var(--primary);
+}
+
+.outline{
+  background-color: var(--white);
+  border-color: var(--primary);
+  color: var(--primary);
+}
+
+// .small{
+// }
+
+// .large{
+// }
+
+.rounded{
+  border-radius: 999px;
+}
+
+.text{
+  display: block;
+  background-color: transparent;
+}
+
+.icon + .title, .title + .icon {
+  margin-left: 8px;
+}

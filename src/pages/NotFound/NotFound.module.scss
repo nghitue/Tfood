@@ -1,0 +1,41 @@
+.container{
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  height: 100vh;
+
+}
+.imagetext{
+  img{
+    height: 200px;
+  }
+}
+.title{
+  font-size: 30px;
+  margin-bottom: 20px;
+  color: var(--cltitle);
+}
+.sub-title{
+  font-size: 18px;
+  margin-bottom: 30px;
+  color: var(--cltitle);
+}
+.back{
+  background: var(--primary);
+  padding: 20px 50px;
+  display: inline-flex;
+  align-items: center;
+}
+
+.back-home{
+  margin-right: 20px;
+}
+
+@media (min-width: 1280px) {
+  .back{
+   &:hover{
+     background: var(--cltitle);
+     transition: 0.5s ease-in-out;
+   }
+  }
+}

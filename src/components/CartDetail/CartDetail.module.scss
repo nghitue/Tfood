@@ -1,0 +1,47 @@
+.close-btn{
+  width: 20px;
+  height: 20px;
+  path{
+    fill: var(--white);
+  }
+}
+
+.close-btn-wrapper{
+  width: 30px;
+  height: 30px;
+  background: var(--primary);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: 0.3s ease-in-out;
+  &:hover{
+    background: #000;
+    transition: 0.3s ease-in-out;
+  }
+}
+
+.btn-bottom{
+  cursor: pointer;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #fff;
+  border: 1px solid var(--clborder);
+  transition: ease-in-out background 0.5s;
+  svg{
+    path{
+      fill: var(--clborder);
+    }
+  }
+  &:hover{
+    background: var(--primary);
+    border-color: var(--primary);
+    svg{
+      path{
+        fill: var(--white);
+      }
+    }
+  }
+}

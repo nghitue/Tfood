@@ -1,0 +1,17 @@
+.phone-number-box, .otp-enter,.otp-box{
+  span{
+    font-weight: bold;
+    font-size: 16px;
+    margin-bottom: 10px;
+    display: block;
+  }
+}
+
+.otp-box{
+  margin-top: 10px;
+}
+
+.error-text{
+  color: var(--clerror);
+  margin-top: 10px;
+}

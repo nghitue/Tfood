@@ -1,0 +1,21 @@
+.order-box-wrapper{
+  opacity: 0;
+  visibility: hidden;
+}
+
+.close-btn-wrapper{
+  width: 30px;
+  height: 30px;
+  background: var(--primary);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: 0.3s ease-in-out;
+  color: #ffffff;
+  &:hover{
+    background: #000;
+    transition: 0.3s ease-in-out;
+  }
+}
+
+
