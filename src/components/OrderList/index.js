@@ -13,7 +13,7 @@ function OrderList() {
     const orderList = useSelector(selectAllOrderList);
     const status = useSelector(getOrderListStatus);
     const error = useSelector(getOrderListError);
-    const phoneNum = useSelector(getUserPhone) || window.localStorage.getItem("phoneNum");
+    const phoneNum = useSelector(getUserPhone) || window.sessionStorage.getItem("phoneNum");
 
     let content;
     if (status === 'loading') {

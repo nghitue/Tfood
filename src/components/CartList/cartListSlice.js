@@ -9,7 +9,7 @@ const initialState = cartListAdapter.getInitialState({
     status: 'idle', //'idle' | 'loading' | 'succeeded' | 'failed'
     error: null,
     loginStatus: false,
-    userPhone: localStorage.getItem('phoneNum'),
+    userPhone: sessionStorage.getItem('phoneNum'),
     userExist: false,
     cartId: null,
 });
@@ -107,7 +107,7 @@ export const { selectAll: selectAllCartList } = cartListAdapter.getSelectors((st
 export const getCartListStatus = (state) => state.cartList.status;
 export const getCartListError = (state) => state.cartList.error;
 export const getUserExist = (state) => state.cartList.userExist;
-export const getCartId = (state) => state.cartList.cartId || window.localStorage.getItem("cartId");
+export const getCartId = (state) => state.cartList.cartId || window.sessionStorage.getItem("cartId");
 export const getUserPhone = (state) => state.cartList.userPhone;
 export const getStatusLogin = (state) => state.cartList.loginStatus;
 

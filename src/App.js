@@ -10,7 +10,7 @@ import { DefaultLayout } from '@/components/Layout';
 import { getStatusLogin } from '@/components/CartList/cartListSlice';
 
 function App() {
-    const LoggedIn = useSelector(getStatusLogin) || localStorage.getItem('isLogin');
+    const LoggedIn = useSelector(getStatusLogin) || sessionStorage.getItem('isLogin');
     return (
         <Router>
             <Routes>

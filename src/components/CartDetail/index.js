@@ -18,7 +18,7 @@ function CartDetail() {
     let product = useSelector(prodByIdList);
     const cartItem = useSelector(selectCartDetail);
     const [countProd, setCountProd] = useState(1);
-    const cartId = useSelector(getCartId) || window.localStorage.getItem("cartId");
+    const cartId = useSelector(getCartId) || window.sessionStorage.getItem("cartId");
 
     const handleMinusProduct = () => {
         countProd > 0 ? setCountProd((countProd) => countProd - 1) : setCountProd(0);
@@ -37,7 +37,7 @@ function CartDetail() {
         if(!cartId){
             const id = uuid();
             dispatch(setCartId(id));
-            window.localStorage.setItem("cartId", id);
+            window.sessionStorage.setItem("cartId", id);
             dispatch(addCartList({
                 id: id,
                 numberProd: countProd,

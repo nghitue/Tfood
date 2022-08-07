@@ -2655,7 +2655,7 @@ label {
 }
 @media (max-width: 639px) {
   .header {
-    padding: 20px 0.75rem;
+    padding: 10px 0.75rem;
   }
   .header .logo {
     -webkit-box-ordinal-group: 2;
@@ -2968,7 +2968,7 @@ ul {
 .menu-list li.active:before {
   display: block;
   height: 70%;
-  background: #02a3af;
+  background: linear-gradient(0deg, rgba(2,163,175,1) 0%, rgba(234,151,105,1) 100%);
 }
 .menu-list li.active span {
   color: #fff;
@@ -2978,7 +2978,10 @@ ul {
 }
 @media (max-width: 639px) {
   .section1 {
-    padding-top: 100px;
+    padding-top: 0px;
+  }
+  .block-right .cart-box{
+    margin-right: 10px;
   }
 }
 .see-all-box {
@@ -3242,12 +3245,9 @@ ul {
 }
 @media (min-width: 1280px) {
   .btn-order:hover {
-    border-top-left-radius: 20px;
-    border-bottom-right-radius: 20px;
     -webkit-transition: 0.3s ease-in-out;
     transition: 0.3s ease-in-out;
     color: #fff;
-    background: rgba(2, 163, 175, 0.8);
   }
 }
 .box-4-column {
@@ -3286,11 +3286,22 @@ ul {
   margin-top: 10px;
 }
 .footer .logo {
-  font-size: 30px;
+  font-size: 24px;
   font-family: Cabin, sans-serif;
   display: inline-block;
   margin-bottom: 30px;
 }
+
+.footer .logo > span{
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.footer .logo > span > span{
+  margin-left: 10px;
+}
+
 .footer .f-policy {
   padding-top: 30px;
   margin-top: 30px;
@@ -3895,9 +3906,18 @@ input.form-control {
   justify-content: center;
 }
 
+#tippy-1{
+  pointer-events: initial !important;
+}
+
 @media (max-width: 639px) {
   .product-price span{
     display: block;
+  }
+  .basket-preview .box-item{
+    display: flex;
+    grid-template-columns: initial;
+    flex-wrap: wrap;
   }
 }
 

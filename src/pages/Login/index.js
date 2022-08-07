@@ -76,8 +76,8 @@ function Login() {
 
         // update status and direct to home page
 
-        window.localStorage.setItem("isLogin", true);
-        window.localStorage.setItem("phoneNum", user.phoneNumber);
+        window.sessionStorage.setItem("isLogin", true);
+        window.sessionStorage.setItem("phoneNum", user.phoneNumber);
         navigate("/");
 
       }).catch((error) => {

@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCircleXmark, faArrowRightFromBracket, faUser } from '@fortawesome/free-solid-svg-icons';
 import Tippy from '@tippyjs/react/headless';
@@ -30,7 +30,9 @@ export default function Header({ searchBar }) {
     const status = useSelector(getCartListStatus);
     const carList = useSelector(selectCartDetail);
     const cartId = useSelector(getCartId);
-    const isLogin = useSelector(getStatusLogin) || localStorage.getItem('isLogin');
+    const isLogin = useSelector(getStatusLogin) || sessionStorage.getItem('isLogin');
+    const [hidenSearch, setHidenSearch] = useState(true);
+    let windowW = window.innerWidth;
 
     if (status === 'succeeded') {
         var numberProd = carList.length > 0 ? carList[0].numberProd : 0;
@@ -60,19 +62,29 @@ export default function Header({ searchBar }) {
     };
 
     const logout = () => {
-        window.localStorage.removeItem('isLogin');
-        window.localStorage.removeItem('phoneNum');
-        window.localStorage.removeItem('cartId');
+        window.sessionStorage.removeItem('isLogin');
+        window.sessionStorage.removeItem('phoneNum');
+        window.sessionStorage.removeItem('cartId');
         dispatch(deleteCartList(cartId));
     };
+
+    useEffect(() => {
+        if(windowW < 640){
+            setHidenSearch(false);
+        }
+        else{
+            setHidenSearch(true);
+        }
+    },[hidenSearch,windowW])
 
     return (
         <>
             <header className={cx('wrapper')}>
                 <div className="container header">
                     <h1 className={cx('logo')}>
-                        <Button className={`junita-script ${cx('logo')}`} to={'/'}>
-                            TFood
+                        <Button className={`${cx('logo')}`} to={'/'}>
+                            <img src={images.logo} alt="logo" />
+                            <span>Tfood</span>
                         </Button>
                     </h1>
                     {/* <Tippy
@@ -104,7 +116,7 @@ export default function Header({ searchBar }) {
                             </div>
                         </div>
                     </Tippy> */}
-                    {searchBar && (
+                    {searchBar && hidenSearch && (
                         <>
                             <div className="search-block">
                                 <input
@@ -160,7 +172,7 @@ export default function Header({ searchBar }) {
                                 {isLogin ? (
                                     <img src={images.avatar} alt="avatar" />
                                 ) : (
-                                    <img src={images.noneUser} alt="avatar" />
+                                    <img src={images.noneUser} alt="avatar" className={cx('none-user')}/>
                                 )}
                             </div>
                         </Tippy>

@@ -1,5 +1,6 @@
 import Button from "@/components/Button";
 import classNames from "classnames/bind";
+import images from '@/assets/images';
 
 import styles from "@/components/Layout/components/Footer"
 
@@ -10,10 +11,9 @@ export default function Footer() {
     <footer className="footer">
       <div className="container">
         <div className="f-info">
-          {/* <Button text className={`junita-script ${cx('logo')}`}>TFood</Button> */}
-          {/* <a className="logo" href="#">TFood</a> */}
-          <Button className={`junita-script ${cx('logo')}`} to={'/'}>
-            TFood
+          <Button className={`${cx('logo')}`} to={'/'}>
+            <img src={images.logowhite} alt="logo" />
+            <span>Tfood</span>
           </Button>
           <div className="box-4-column">
             <div className="item">

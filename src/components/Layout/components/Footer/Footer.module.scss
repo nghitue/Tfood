@@ -1,0 +1,11 @@
+.logo > span{
+  align-items: center;
+  display: flex;
+}
+  
+.logo > span > span{
+  line-height: 1;
+  margin-left: 10px;
+  display: inline-block;
+  font-size: 24px;
+}

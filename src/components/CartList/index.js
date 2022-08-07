@@ -28,8 +28,8 @@ function CartList() {
     const cartList = useSelector(selectCartDetail);
     const status = useSelector(getCartListStatus);
     const error = useSelector(getCartListError);
-    const isLogin = useSelector(getStatusLogin) || localStorage.getItem('isLogin');
-    const phoneNum = useSelector(getUserPhone) || window.localStorage.getItem('phoneNum');
+    const isLogin = useSelector(getStatusLogin) || sessionStorage.getItem('isLogin');
+    const phoneNum = useSelector(getUserPhone) || window.sessionStorage.getItem('phoneNum');
     
     const handleDeleteProd = (id, numberProd) => {
         dispatch(
@@ -98,7 +98,7 @@ function CartList() {
                             {cart.map((item) => {
                                 return (
                                     <div className="box-item" key={item.prod_id}>
-                                        <div className={cx('amout')}>
+                                        <div className={cx('amount')}>
                                             <span>{item.prod_number}</span>
                                         </div>
                                         <figure className="product-img item">

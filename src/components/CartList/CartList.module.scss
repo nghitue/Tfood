@@ -8,7 +8,7 @@
   text-align: right;
 }
 
-.amout{
+.amount{
   text-align: center;
 }
 
@@ -60,5 +60,25 @@
   &:hover{
     opacity: 0.8;
     transition: 0.3s ease-in-out;
+  }
+}
+
+@media (max-width: 639px) {
+  .amount{
+    width: 30px;
+  }
+  .name-prod{
+    width: calc(100% - 110px);
+    margin-bottom: 0;
+  }
+  .f-right{
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    width: 100%;
+  }
+  .btn-delete{
+    margin-top: 0;
+    margin-left: 10px;
   }
 }
